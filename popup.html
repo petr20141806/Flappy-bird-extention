@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flappy Bird Mini</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <div>
+          <div class="brand-title">FLAPPY BIRD</div>
+          <div class="brand-subtitle">PIXEL MINI ARCADE</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="botButton" class="mode-button" type="button" aria-pressed="false">БОТ: ВЫКЛ</button>
+        <button id="settingsButton" class="settings-button" type="button" aria-label="Настройки" title="Настройки">⚙</button>
+      </div>
+    </header>
+
+    <section class="game-shell" aria-label="Игровое поле Flappy Bird">
+      <canvas id="game" width="288" height="512" aria-label="Игровое поле. Нажимайте мышью, чтобы птица взлетала."></canvas>
+      <button id="pauseButton" class="game-control pause-control" type="button" aria-label="Пауза" title="Пауза">Ⅱ</button>
+      <button id="soundButton" class="game-control sound-control" type="button" aria-label="Выключить звук" title="Звук">♫</button>
+    </section>
+
+    <footer class="footer">
+      <span id="footerHint"><i class="dot"></i> НАЖИМАЙ МЫШЬЮ, ЧТОБЫ ЛЕТЕТЬ</span>
+      <span class="version">v1.1</span>
+    </footer>
+
+    <section id="settingsOverlay" class="settings-overlay" aria-hidden="true">
+      <div class="settings-card" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+        <div class="settings-heading">
+          <div>
+            <div class="settings-eyebrow">PIXEL MINI ARCADE</div>
+            <h1 id="settingsTitle">Настройки</h1>
+          </div>
+          <span class="settings-sparkle" aria-hidden="true">✦</span>
+        </div>
+
+        <label class="setting-row" for="settingSound">
+          <span><strong>Звуковые эффекты</strong><small>Прыжок, очко и столкновение</small></span>
+          <input id="settingSound" type="checkbox">
+        </label>
+
+        <label class="setting-field" for="settingDifficulty">
+          <span><strong>Сложность</strong><small>Меняет скорость труб и размер прохода</small></span>
+          <select id="settingDifficulty">
+            <option value="easy">Лёгкая</option>
+            <option value="normal">Обычная</option>
+            <option value="hard">Сложная</option>
+          </select>
+        </label>
+
+        <div class="setting-note">
+          <span class="note-icon">✧</span>
+          <span>Режим бота включается кнопкой <b>БОТ</b> над игровым полем. Он сам нажимает за птицу.</span>
+        </div>
+
+        <div class="settings-record">
+          <div><small>ТЕКУЩИЙ РЕКОРД</small><strong id="settingsBest">0</strong></div>
+          <button id="resetBestButton" type="button">Сбросить рекорд</button>
+        </div>
+
+        <button id="closeSettingsButton" class="done-button" type="button">ГОТОВО</button>
+      </div>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
